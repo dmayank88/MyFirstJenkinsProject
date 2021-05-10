@@ -36,6 +36,7 @@
 <muleVersion>4.3.0</muleVersion>
 <username>dmayank884</username>
 <password>Mvaishali@1</password>
+<objectStoreV2>true</objectStoreV2>				    
 <applicationName>Trng-Day01-setupfirstexample-prod</applicationName>
 <environment>Sandbox</environment>
 <region>us-east-1</region>
