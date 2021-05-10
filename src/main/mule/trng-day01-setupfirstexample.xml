@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d32f584c-e34b-414d-a0fc-504177ed9dbc" basePath="/api">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="trng-day01-setupfirstexampleFlow" doc:id="236afc68-6a1c-4922-85ea-7487deddce40" >
+		<http:listener doc:name="Listener" doc:id="eb97a995-1f68-4df2-8e6f-af538c973424" config-ref="HTTP_Listener_config" path="/FirstExample"/>
+		<set-payload value="-----Welcome to MuleSoft learning !! Setup First example------------" doc:name="Set Payload" doc:id="762d9416-f8ed-42fe-9e4a-bdeb42fb8124" />
+		<set-payload value="----Modified payload messege Again ----- Welcome to MuleSoft for the second time------" doc:name="Set Payload" doc:id="5df99da8-f7d7-40eb-89d8-8f2a5bac1e1b" />
+		<logger level="INFO" doc:name="Logger" doc:id="39c7870e-127a-47cf-8aa6-8972b990ceb2" message="#[payload]"/>
+	</flow>
+</mule>
